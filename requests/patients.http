@@ -1,0 +1,14 @@
+
+@api = http://localhot::3000/patients
+
+GET {{api}}
+
+##
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+    "name": "Josefina",
+    "description": "paciente"
+ }
