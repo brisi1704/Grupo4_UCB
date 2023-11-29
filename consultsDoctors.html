@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reserva de Citas - Clínica Brivi</title>
+  <title>Consulta de Doctores - Clínica Brivi</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,7 +36,7 @@
       color: #555;
     }
 
-    input, select, textarea {
+    input, select {
       width: 100%;
       padding: 12px;
       margin-bottom: 18px;
@@ -66,43 +66,36 @@
 </head>
 <body>
 
-  <form id="appointmentForm">
-    <h1>Reserva de Citas - Clínica Brivi</h1>
+  <form id="doctorForm">
+    <h1>Registro especialidades de doctores - Clínica Brivi</h1>
 
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
+    <label for="doctorId">ID del Doctor:</label>
+    <input type="text" id="doctorId" name="doctorId" placeholder="Ej: 12345">
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Número de Teléfono:</label>
-    <input type="tel" id="phone" name="phone" required>
-
-    <label for="doctor">Selecciona un Doctor:</label>
-    <select id="doctor" name="doctor" required>
-      <option value="doctor1">Doctor 1</option>
-      <option value="doctor2">Doctor 2</option>
+    <label for="specialty">Especialidad:</label>
+    <select id="specialty" name="specialty">
+      <option value="general">Medicina General</option>
+      <option value="dentist">Odontología</option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
 
-    <label for="date">Fecha de la Cita:</label>
-    <input type="date" id="date" name="date" required>
+    <label for="location">Ubicación:</label>
+    <input type="text" id="location" name="location" placeholder="Ej: Consultorio 3">
 
-    <label for="time">Hora de la Cita:</label>
-    <input type="time" id="time" name="time" required>
-
-    <label for="notes">Notas Adicionales:</label>
-    <textarea id="notes" name="notes" rows="4"></textarea>
-
-    <button type="submit">Reservar Cita</button>
+    <button type="submit">Buscar Doctores</button>
   </form>
 
   <script>
-    document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    document.getElementById("doctorForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      // Aquí puedes agregar lógica para procesar los datos del formulario, por ejemplo, enviarlos a un servidor.
-      alert("Cita reservada. Puedes agregar aquí la lógica para procesar los datos.");
+      
+      const doctorId = document.getElementById('doctorId').value;
+      const specialty = document.getElementById('specialty').value;
+      const location = document.getElementById('location').value;
+
+      // Aquí puedes agregar lógica para procesar los datos del formulario, por ejemplo, realizar una búsqueda de doctores.
+      alert(`Consulta realizada. ID del Doctor: ${doctorId}, Especialidad: ${specialty}, Ubicación: ${location}`);
     });
   </script>
 

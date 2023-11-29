@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Horarios - Clínica Brivi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: rgb(198, 218, 174);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 400px;
+      max-width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      box-sizing: border-box;
+      border: 1px solid rgb(198, 218, 174);
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+   
+
+    button:hover {
+      background-color: rgb(198, 218, 174);
+    }
+  </style>
+</head>
+<body>
+
+  <form id="scheduleForm">
+    <h1>Consulta de Horarios - Clínica Brivi</h1>
+
+    <label for="doctor">Selecciona un Doctor:</label>
+    <select id="doctor" name="doctor">
+      <option value="doctor1">Doctor 1</option>
+      <option value="doctor2">Doctor 2</option>
+      <!-- Agrega más opciones según sea necesario -->
+    </select>
+
+    <label for="day">Selecciona un Día:</label>
+    <select id="day" name="day">
+      <option value="monday">Lunes</option>
+      <option value="tuesday">Martes</option>
+      <option value="wednesday">Miércoles</option>
+      <option value="thursday">Jueves</option>
+      <option value="friday">Viernes</option>
+      <!-- Agrega más opciones según sea necesario -->
+    </select>
+
+    <label for="startTime">Hora de Inicio:</label>
+    <input type="time" id="startTime" name="startTime" required>
+
+    <label for="endTime">Hora de Fin:</label>
+    <input type="time" id="endTime" name="endTime" required>
+
+    <button type="submit">Ver Horarios Disponibles</button>
+  </form>
+
+  <script>
+    document.getElementById("scheduleForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Obtener valores del formulario
+      const selectedDoctor = document.getElementById('doctor').value;
+      const selectedDay = document.getElementById('day').value;
+      const selectedStartTime = document.getElementById('startTime').value;
+      const selectedEndTime = document.getElementById('endTime').value;
+
+      // Aquí puedes agregar lógica para procesar los datos del formulario, por ejemplo, mostrar los horarios disponibles para el doctor, día y horas seleccionados.
+      alert(`Consultando horarios para Doctor: ${selectedDoctor}, Día: ${selectedDay}, Hora de Inicio: ${selectedStartTime}, Hora de Fin: ${selectedEndTime}`);
+    });
+  </script>
+
+</body>
+</html>
