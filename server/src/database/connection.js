@@ -1,10 +1,12 @@
 import sql from 'mssql'
+import config from '../config'
 
 const dbSettings = {
-    user: 'fast',
-    password: 'password',
-    server: 'localhost',
-    database: 'webstore',
+    
+    user: config.dbUser,
+    password: config.dbPassword,
+    server: config.dbServer,
+    database: config.dbDatabase,
     options: {
         encrypt: true,
         trustServerCertificate: true,
@@ -21,3 +23,4 @@ export async function getConnection(){
     }
 }
 
+export { sql};

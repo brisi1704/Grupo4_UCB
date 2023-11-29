@@ -1,9 +1,9 @@
 
-@api = http://localhot::3000/patients
+@api = http://localhost:3000/patients
 
 GET {{api}}
 
-##
+###
 
 POST {{api}}
 Content-Type: application/json
@@ -12,3 +12,25 @@ Content-Type: application/json
     "name": "Josefina",
     "description": "paciente"
  }
+
+ ###
+
+GET {{api}}/111
+
+ ### 
+
+DELETE {{api}}/4
+
+ ###
+
+GET {{api}}/count
+
+ ###
+
+PUT {{api}}/111
+Content-Type: application/json
+{
+   "name" : "mariana",
+   "description": "paciente"
+   "number": "24232"
+}
